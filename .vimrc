@@ -32,11 +32,17 @@ Plugin 'pearofducks/ansible-vim'
 
 " Javascript
 Plugin 'pangloss/vim-javascript'
+
+" Typescript
+Plugin 'leafgarland/typescript-vim'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Quramy/tsuquyomi'
 call vundle#end()
 
 filetype plugin indent on
 
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_checkers = ['tslint']
 
 " auto remove trailing whitespaces
 autocmd BufWritePre * %s/\s\+$//e
@@ -50,8 +56,14 @@ let NERDTreeShowHidden=1
 
 " javascrtipt settings
 let g:javascript_plugin_jsdoc = 1
+
+" typescript settings
+let g:tsuquyomi_completion_detail = 1
+autocmd FileType typescript setlocal completeopt+=menu,preview
+
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype json setlocal ts=2 sw=2 sts=0 expandtab
+autocmd Filetype yaml setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype scss setlocal ts=4 sw=4 sts=0 expandtab
 autocmd Filetype html setlocal ts=4 sw=4 sts=0 expandtab
 
