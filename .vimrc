@@ -26,6 +26,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'justinmk/vim-sneak'
 
 " Ansible
 Plugin 'pearofducks/ansible-vim'
@@ -42,7 +44,8 @@ call vundle#end()
 filetype plugin indent on
 
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_typescript_checkers = ['tslint']
+let g:syntastic_typescript_checkers = ['tsuquyomi']
+let g:syntastic_check_on_open = 1
 
 " auto remove trailing whitespaces
 autocmd BufWritePre * %s/\s\+$//e
@@ -82,4 +85,9 @@ let g:NERDCommentEmptyLines = 1
 
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
+
+let g:airline_powerline_fonts = 1
+
+" DONT HIDE QUOTES IN JSON FILES
+let g:indentLine_conceallevel = 0
 
