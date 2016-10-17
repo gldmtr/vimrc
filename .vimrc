@@ -16,36 +16,41 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'scrooloose/syntastic'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-surround'
-Plugin 'kien/ctrlp.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'AndrewRadev/splitjoin.vim'
-Plugin 'justinmk/vim-sneak'
+" Languages
 
 " Ansible
 Plugin 'pearofducks/ansible-vim'
-
 " Javascript
 Plugin 'pangloss/vim-javascript'
-
 " Typescript
 Plugin 'leafgarland/typescript-vim'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Quramy/tsuquyomi'
+
+" Linters
+" Asynchronous Lint Engine
+Plugin 'w0rp/ale'
+
+Plugin 'editorconfig/editorconfig-vim'
+
+" Navigation
+Plugin 'scrooloose/nerdtree'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'justinmk/vim-sneak'
+Plugin 'terryma/vim-multiple-cursors'
+
+
+" Interface
+Plugin 'vim-airline/vim-airline'
+
+" Functionality
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'AndrewRadev/splitjoin.vim'
+
 call vundle#end()
 
 filetype plugin indent on
-
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_typescript_checkers = ['tsuquyomi']
-let g:syntastic_check_on_open = 1
 
 " auto remove trailing whitespaces
 autocmd BufWritePre * %s/\s\+$//e
@@ -61,7 +66,6 @@ let NERDTreeShowHidden=1
 let g:javascript_plugin_jsdoc = 1
 
 " typescript settings
-let g:tsuquyomi_completion_detail = 1
 autocmd FileType typescript setlocal completeopt+=menu,preview
 
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
@@ -87,7 +91,4 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 
 let g:airline_powerline_fonts = 1
-
-" DONT HIDE QUOTES IN JSON FILES
-let g:indentLine_conceallevel = 0
 
